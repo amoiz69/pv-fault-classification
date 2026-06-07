@@ -1,0 +1,23 @@
+# Stage-1 baseline estimator — training hyperparameters.
+# Kept out of code so runs are reproducible and tunable without edits.
+
+seed: 42
+
+data:
+  root: data                         # dir containing images/ and splits/
+  train_split: data/splits/noanomaly_train.csv   # No-Anomaly ONLY (Pitfall 2)
+  val_split: data/splits/noanomaly_val.csv
+
+model:
+  width: 16                          # base channel count (16->32->64)
+
+train:
+  epochs: 40
+  batch_size: 128
+  lr: 0.001
+  weight_decay: 0.0001
+  num_workers: 2
+  early_stop_patience: 8             # stop if val MAE doesn't improve for N epochs
+
+output:
+  checkpoint: checkpoints/estimator.pt
