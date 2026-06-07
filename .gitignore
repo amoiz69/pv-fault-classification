@@ -1,0 +1,26 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.venv/
+.env
+
+# model artifacts
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+runs/
+wandb/
+mlruns/
+
+# dataset images (large, public, re-downloadable). Labels + splits ARE tracked.
+data/images/
+data/InfraredSolarModules/
+data/*.zip
+
+# editors / tooling
+.idea/
+.vscode/
+.claude/
